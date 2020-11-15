@@ -1,0 +1,7 @@
+moolng:
+    es:
+        config:
+          host: 192.168.31.18
+          port: 9200
+#      username: elastic
+#      password: superzsh123
