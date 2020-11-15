@@ -149,6 +149,10 @@ public class CannalClient implements InitializingBean {
     }
 
 
+    /**
+     * 反射进行数据赋值
+     * @param columnList
+     */
     private void setObjectValue(List<Column> columnList){
         MoolngIndexDTO dto = new MoolngIndexDTO();
         for (Column column : columnList) {
@@ -157,6 +161,7 @@ public class CannalClient implements InitializingBean {
                 field.setAccessible(true);
                 Object val = null;
                 Class<?> type = field.getType();
+                // 需要优化
                 if(type == Integer.class){
                     val = Integer.valueOf(column.getValue());
                 }else if(type == Date.class){
